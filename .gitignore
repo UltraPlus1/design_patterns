@@ -12,6 +12,7 @@ dist
 build
 target
 .idea
+out
 .classpath
 .project
 .settings
