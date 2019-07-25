@@ -1,6 +1,4 @@
-package simple_factory.src.main.java.Mason;
-
-import java.util.Dictionary;
+package static_factory_method.src.main.java.Mason;
 
 public class OperationFactory {
     public static Operation oper = null;

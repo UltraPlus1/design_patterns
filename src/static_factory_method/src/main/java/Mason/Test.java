@@ -1,4 +1,4 @@
-package simple_factory.src.main.java.Mason;
+package static_factory_method.src.main.java.Mason;
 
 public class Test {
     public static void main(String[] args) throws Exception {
