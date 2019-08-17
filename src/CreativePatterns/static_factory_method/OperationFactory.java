@@ -1,4 +1,4 @@
-package static_factory_method;
+package CreativePatterns.static_factory_method;
 
 public class OperationFactory {
     public static Operation oper = null;

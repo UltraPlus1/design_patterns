@@ -1,4 +1,4 @@
-package static_factory_method;
+package CreativePatterns.static_factory_method;
 
 /**
  * 加法运算类 ，继承运算类
