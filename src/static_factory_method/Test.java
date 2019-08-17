@@ -1,6 +1,6 @@
 package static_factory_method;
 
-public class Test {
+public class  Test {
     public static void main(String[] args) throws Exception {
         Add(1,2);
         Sub(3,5);
