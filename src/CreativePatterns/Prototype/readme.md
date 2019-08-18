@@ -11,3 +11,69 @@
 
 ## 原型模式的结构与实现
 
+由于 Java 提供了对象的 clone() 方法，所以用 Java 实现原型模式很简单。
+
+**1. 模式的结构**
+
+原型模式包含以下主要角色。
+
+1. 抽象原型类：规定了具体原型对象必须实现的接口。
+2. 具体原型类：实现抽象原型类的 clone() 方法，它是可被复制的对象。
+3. 访问类：使用具体原型类中的 clone() 方法来复制新的对象。
+
+其结构图如图 1 所示。
+
+![Structure](structure.gif)
+
+**2. 模式的实现**
+
+原型模式的克隆分为浅克隆和深克隆，Java 中的 Object 类提供了浅克隆的 clone() 方法，
+具体原型类只要实现 Cloneable 接口就可实现对象的浅克隆，这里的 Cloneable 接口就是抽象原型类。
+其代码如下：
+
+```java
+//继承自抽象原型类 Cloneable
+//具体原型类
+class Realizetype implements Cloneable
+  {
+  	private String name;
+  	
+      Realizetype(String name)//构造函数
+      {
+      	this.name = name;
+          System.out.println("具体原型创建成功！");
+      }
+      public Object clone() throws CloneNotSupportedException
+      {
+          System.out.println("具体原型复制成功！");
+          return (Realizetype)super.clone();
+      }//访问类
+      public void getName(){
+      	System.out.println("我的名字"+this.name);
+      }
+  }
+  //原型模式的测试类
+  public class PrototypeTest
+   {
+       public static void main(String[] args)throws CloneNotSupportedException
+       {
+           Realizetype obj1=new Realizetype();
+           Realizetype obj2=(Realizetype)obj1.clone();
+           obj1.getName();
+           obj2.getName();
+           System.out.println("obj1==obj2?"+(obj1==obj2));
+       }
+   }
+/**
+* 输出：
+*具体原型创建成功！
+*具体原型复制成功！
+*我的名字孙悟空
+*我的名字孙悟空
+*obj1==obj2?false
+* 
+*/
+
+```
+## 原型模式的应用实例
+
